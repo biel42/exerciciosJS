@@ -1,0 +1,34 @@
+
+<script>
+
+//lista de produtos
+var Produtos = [ { id: 100, nome: "Cachorro quente", preco: 1.70 }, { id: 101, nome: "Bauru Simples", preco: 2.30 },
+                 { id: 102, nome: "Bauru com Ovo",   preco: 2.60 }, { id: 103, nome: "Hamburguer", preco: 2.40 },
+                 { id: 104, nome: "Cheese Burguer",  preco: 2.50 }, { id: 105, nome: "Refrigerante", preco: 1.00 } ];
+
+//pedido
+function compra () {
+
+    let codigoProduto = prompt('Qual o código do produto desejado?');
+    let quantidade = prompt("Qual a quantidade desejada?");
+
+    for(let i = 0; i < Produtos.length; i++) {
+        
+        if(Produtos[i].id == Number(codigoProduto)) {
+            document.write(`Você adiquiriu ${quantidade} ${Produtos[i].nome} o total da sua compra é R$${Produtos[i].preco * quantidade}.`);
+            break
+        } else {
+            alert(`produto ${codigoProduto} não encontrado. verifique se inseriu um código váligo e tente novamente.`)
+            console.error("produto não encontrado");
+            document.location.reload();
+            return null
+        }
+
+    }
+    
+    return null;
+}
+
+compra();
+
+</script>
